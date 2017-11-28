@@ -29,6 +29,7 @@
 
 (defn root-component []
   [:div
+  [:h1 "hello fig"]
    [:div.logos
     [:img.electron {:src "img/electron-logo.png"}]
     [:img.cljs {:src "img/cljs-logo.svg"}]
@@ -40,7 +41,7 @@
    [:button
     {:on-click #(swap! state inc)}
     (str "Clicked " @state " times")]
-   [:p
+   [:div
     [:form
      {:on-submit (fn [^js/Event e]
                    (.preventDefault e)

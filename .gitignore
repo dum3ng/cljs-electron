@@ -2,3 +2,5 @@ target/
 resources/
 *-init.clj
 figwheel_server.log
+.nrepl-port
+.lein-repl-history

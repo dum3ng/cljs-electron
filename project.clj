@@ -3,13 +3,18 @@
             :url "https://opensource.org/licenses/MIT"}
   :source-paths ["src"]
   :description "A hello world application for electron"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.542"]
-                 [figwheel "0.5.10"]
+  :dependencies [[org.clojure/clojure "1.9.0-RC1"]
+                 [org.clojure/clojurescript "1.9.946"]
                  [reagent "0.6.1"]
                  [ring/ring-core "1.6.1"]]
-  :plugins [[lein-cljsbuild "1.1.5"]
-            [lein-figwheel "0.5.10"]]
+  :plugins [[lein-cljsbuild "1.1.5"]]
+
+  :profiles {:dev
+             {:source-paths ["dev_src"]
+              :dependencies [[figwheel-sidecar "0.5.14"]
+                             [com.cemerick/piggieback "0.2.2"]
+                             [org.clojure/tools.nrepl "0.2.10"]]
+              :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}}}
 
   :clean-targets ^{:protect false} ["resources/main.js"
                                     "resources/public/js/ui-core.js"
