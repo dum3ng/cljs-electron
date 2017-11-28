@@ -14,26 +14,28 @@ Based on the work of [Gonzih](https://github.com/Gonzih/cljs-electron)
 
 ## Running it
 
-```shell
-npm install electron-prebuilt -g # install electron binaries
 
-lein trampoline cljsbuild auto electron-dev                       # compile cljs for nodejs
+```shell
+# install electron binaries
+$ npm install electron-prebuilt -g 
+
+# compile cljs for nodejs
+$ lein trampoline cljsbuild auto electron-dev
 
 # in another terminal session
-rlwrap lein trampoline run -m clojure.main  # or if you are using emacs cider, just 'C-c M-j'
+$ rlwrap lein trampoline run -m clojure.main  # or if you are using emacs cider, just 'C-c M-j'
+
 # the repl will prompt in user namespace
-```
-user=> (dev)
-dev.core=> (start)  # will start figwheel
-dev.core=> (repl)  # will make a cljs repl for *frontend-dev* as default
-```
+ user=> (dev)
+ dev.core=> (start)  # will start figwheel
+ dev.core=> (repl)  # will make a cljs repl for *frontend-dev* as default
+
 # in another terminal
-electron .
+$ electron .
 
 # now we can test in the repl
-```
 cljs.user=> (js/alert "hello")
-```
+
 
 ```
 
