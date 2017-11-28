@@ -9,8 +9,7 @@
                  [reagent "0.6.1"]
                  [ring/ring-core "1.6.1"]]
   :plugins [[lein-cljsbuild "1.1.5"]
-            [lein-figwheel "0.5.10"]
-            [lein-cooper "1.2.2"]]
+            [lein-figwheel "0.5.10"]]
 
   :clean-targets ^{:protect false} ["resources/main.js"
                                     "resources/public/js/ui-core.js"
