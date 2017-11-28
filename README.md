@@ -1,10 +1,9 @@
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/feeds2imap.clj/blob/master/LICENSE.md) [![Build Status](https://travis-ci.org/Gonzih/cljs-electron.svg?branch=master)](https://travis-ci.org/Gonzih/cljs-electron)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/Gonzih/feeds2imap.clj/blob/master/LICENSE.md) 
 
+Based on the work of [Gonzih](https://github.com/Gonzih/cljs-electron)
 # Clojurified Electron
 
 ![](https://raw.githubusercontent.com/Gonzih/cljs-electron/master/demo.gif)
-
-My attempt to recreate ClojureScript development workflow while developing desktop apps with [electron](http://electron.atom.io/).
 
 ## What is currently included
 
@@ -18,8 +17,24 @@ My attempt to recreate ClojureScript development workflow while developing deskt
 ```shell
 npm install electron-prebuilt -g # install electron binaries
 
-lein cooper                      # compile cljs and start figwheel
-electron .                       # start electron from another terminal
+lein trampoline cljsbuild auto electron-dev                       # compile cljs for nodejs
+
+# in another terminal session
+rlwrap lein trampoline run -m clojure.main  # or if you are using emacs cider, just 'C-c M-j'
+# the repl will prompt in user namespace
+```
+user=> (dev)
+dev.core=> (start)  # will start figwheel
+dev.core=> (repl)  # will make a cljs repl for *frontend-dev* as default
+```
+# in another terminal
+electron .
+
+# now we can test in the repl
+```
+cljs.user=> (js/alert "hello")
+```
+
 ```
 
 ## Releasing
